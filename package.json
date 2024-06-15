@@ -1,0 +1,44 @@
+{
+  "name": "vscode-google-search",
+  "displayName": "Google Selected Text",
+  "description": "Search selected text in Google",
+  "version": "0.0.2",
+  "publisher": "Mojtaba Imani",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-repository/vscode-google-search.git"
+  },
+  "engines": {
+    "vscode": "^1.45.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:extension.googleSearch"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.googleSearch",
+        "title": "Google Search"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "extension.googleSearch",
+        "key": "ctrl+s",
+        "when": "editorTextFocus"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./"
+  },
+  "devDependencies": {
+    "typescript": "^3.8.3",
+    "vscode": "^1.1.37"
+  }
+}
